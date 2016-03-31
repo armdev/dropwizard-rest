@@ -30,8 +30,8 @@ public class ClientPost implements Serializable {
             HttpPost request = new HttpPost("http://localhost:8080/contact");
             JSONObject json = new JSONObject();
             //json.put("id", "12");
-            json.put("firstName", "Milana");
-            json.put("lastName", "EEE");
+            json.put("firstName", "Anna");
+            json.put("lastName", "Paulina");
             json.put("phone", "061 21 22 33");
 
             StringEntity params = new StringEntity(json.toString());
