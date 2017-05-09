@@ -1,9 +1,9 @@
 # dropwizard-rest
-dropwizard-rest example, back end.
 
-In the config.yaml set your config params, create db in mysql.
+cd to project : 
+0. Edit  src/main/resources/config.yml, create database and start mysql
+1. cd to project, mvn clean package -U
+2. java -jar target/dropwizard_backend.jar server src/main/resources/config.yml
 
-run from console : java -jar dropwizard_backend.jar server config.yaml
 
-or open netbeans and just run the project, after you can find ClientPost and ClientGet files, just re use its.
 
