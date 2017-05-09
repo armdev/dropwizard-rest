@@ -6,7 +6,7 @@ import io.dropwizard.db.DataSourceFactory;
 import javax.validation.constraints.Max;
 import org.hibernate.validator.constraints.NotEmpty;
 
-public class PhonebookConfiguration extends Configuration {
+public class BackendConfiguration extends Configuration {
 
     @JsonProperty
     @NotEmpty
@@ -15,6 +15,10 @@ public class PhonebookConfiguration extends Configuration {
     @JsonProperty
     @Max(10)
     private int messageRepetitions;
+    @JsonProperty
+    private final String additionalMessage = "This is optional";
+    @JsonProperty
+    private final DataSourceFactory database = new DataSourceFactory();
 
     public String getMessage() {
         return message;
@@ -24,14 +28,10 @@ public class PhonebookConfiguration extends Configuration {
         return messageRepetitions;
     }
 
-    @JsonProperty
-    private String additionalMessage = "This is optional";
 
     public String getAdditionalMessage() {
         return additionalMessage;
     }
-     @JsonProperty
-    private DataSourceFactory database = new DataSourceFactory();
 
     public DataSourceFactory getDataSourceFactory() {
         return database;

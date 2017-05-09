@@ -33,7 +33,7 @@ public class ContactResource {
     }
 
     @POST
-   // @Path("/{save}")
+    // @Path("/{save}")
     public Response createContact(Contact contact) throws URISyntaxException {
         // store the new contact
         int newContactId = contactDao.createContact(contact.getFirstName(), contact.getLastName(), contact.getPhone());

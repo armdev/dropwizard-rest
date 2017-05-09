@@ -54,10 +54,6 @@ public class Contact {
     @JsonIgnore
     @ValidationMethod(message = "John Doe is not a valid person!")
     public boolean isValidPerson() {
-        if (firstName.equals("John") && lastName.equals("Doe")) {
-            return false;
-        } else {
-            return true;
-        }
+        return !(firstName.equals("John") && lastName.equals("Doe"));
     }
 }

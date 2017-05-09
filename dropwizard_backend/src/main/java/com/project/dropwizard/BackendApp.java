@@ -1,29 +1,29 @@
 package com.project.dropwizard;
 
 import com.project.dropwizard.resources.ContactResource;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import io.dropwizard.Application;
 import io.dropwizard.jdbi.DBIFactory;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import org.skife.jdbi.v2.DBI;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-public class App extends Application<PhonebookConfiguration> {
+public class BackendApp extends Application<BackendConfiguration> {
 
     //run from console : java -jar dropwizard_backend-xxxx.jar server config.yaml
-    private static final Logger LOGGER = LoggerFactory.getLogger(App.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(BackendApp.class);
 
     public static void main(String[] args) throws Exception {
-        new App().run(args);
+        new BackendApp().run(args);
     }
 
     @Override
-    public void initialize(Bootstrap<PhonebookConfiguration> b) {
+    public void initialize(Bootstrap<BackendConfiguration> b) {
     }
 
     @Override
-    public void run(PhonebookConfiguration c, Environment e) throws Exception {
+    public void run(BackendConfiguration c, Environment e) throws Exception {
         LOGGER.info("Method App#run() called");
         for (int i = 0; i < c.getMessageRepetitions(); i++) {
             System.out.println(c.getMessage());
